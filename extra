@@ -109,3 +109,11 @@ position:relative
 
 https://fontawesome.com/icons/star-half?s=solid
 <script src="https://kit.fontawesome.com/c4338603d0.js" crossorigin="anonymous"></script>
+
+https://getbootstrap.com/docs/3.3/components/
+
+//////Bootstrap 3////
+xs < 768px
+sm > 768px
+md > 992px
+lg > 1200px
