@@ -1,0 +1,118 @@
+<html>
+    <head>
+        <title>Bootstrap</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <hr/>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    Employee Form
+                </div>
+                <div class="panel-body">
+                    <form method="POST" action="http://localhost:7800/employee">
+                        <div class="form-group">
+                            <label for="fname">FirstName</label>
+                            <input id="fname" class="form-control" name="fname" 
+                            placeholder="firstname" value="Aakash"
+                            required/>
+                        </div>
+                        <div class="form-group ">
+                            <label for="lname" class="control-label">LastName</label>
+                            <input id="lname" class="form-control" name="lname" value="john"/>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group has-error">
+                                    <label for="email" class="control-label">Email</label>
+                                    <input id="email" class="form-control" name="email"
+                                    placeholder="a@a.com" type="email"/>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group has-success">
+                                    <label for="password" class="control-label">Password</label>
+                                    <input id="password" class="form-control" name="password"
+                                    type="password" minlength="8"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="city">City</label>
+                                    <input id="city" class="form-control" name="city"/>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="state">State</label>
+                                    <input id="state" class="form-control" name="state"/>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="pincode">Pincode</label>
+                                    <input id="pincode" class="form-control" name="pincode"/>
+                                </div>
+                            </div>
+                        </div>
+                        <!---Radio-->
+                        <label>Gender</label>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" value="female" name="gender"/>Female
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" value="male" name="gender"/>Male
+                            </label>
+                        </div>
+                        <!---CheckBox-->
+                        <label>Language</label>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="JavaScript" name="lang"/>JavaScript
+                            </label>
+                            <label>
+                                <input type="checkbox" value="React" name="lang"/>React
+                            </label>
+                            <label>
+                                <input type="checkbox" value="Node" name="lang"/>Node
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label>City</label>
+                            <select class="form-control" name="city">
+                                <option>Delhi</option>
+                                <option>Amsterdam</option>
+                                <option>London</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="comment">Comment</label>
+                            <textarea class="form-control" name="comment" id="comment"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-success">Submit</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+<!---
+class="form-horizontal"
+<div class="form-group has-warning has-feedback">
+                                <label for="lname" class="col-md-2 control-label">LastName</label>
+                                <div class="col-md-10">
+                                    <input id="lname" class="form-control" name="lname" value="john"/>
+                                    <span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+                                </div>
+                        </div>
+-->
