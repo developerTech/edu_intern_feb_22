@@ -1,0 +1,33 @@
+Document object model
+> it help to target your html using javascript
+
+document.getElementsByTagName('a')
+document.getElementsByClassName('scroll')
+document.getElementById('abc')
+
+document.getElementsByTagName('h1')
+HTMLCollection [h1]
+document.getElementsByTagName('h1')[0]
+<h1>​I'm AAKASH HANDA​</h1>​
+document.getElementsByClassName('scroll')
+HTMLCollection(5) [a.scroll, a.scroll, a.scroll, a.scroll, a.scroll]
+document.getElementsByClassName('scroll')[0]
+<a href=​"#skills" class=​"scroll">​Skills​</a>​
+document.getElementsByClassName('scroll')[1]
+<a href=​"#youtube" class=​"scroll">​Youtube​</a>​
+
+document.getElementsByTagName('h1')[0]
+<h1>​I'm AAKASH HANDA​</h1>​
+document.getElementsByTagName('h1')[0].innerHTML
+"I'm AAKASH HANDA"
+document.getElementsByTagName('h1')[0].innerHTML = "I am From Developer Funnel"
+'I am From Developer Funnel'
+document.getElementsByTagName('h1')[0].style.color="red"
+'red'
+document.getElementsByTagName('h1')[0].style.visibility="hidden"
+'hidden'
+
+document.getElementsByClassName('scroll')
+HTMLCollection(5) [a.scroll, a.scroll, a.scroll, a.scroll, a.scroll]0: a.scroll1: a.scroll2: a.scroll3: a.scroll4: a.scrolllength: 5[[Prototype]]: HTMLCollection
+document.getElementsByClassName('scroll')[1].innerHTML="Videos"
+'Videos'
