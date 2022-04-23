@@ -1,0 +1,9 @@
+#coupon{
+    height:200px;
+    width:400px;
+    background-color:gray;
+    z-index: 100;
+    position: absolute;
+    display: none;
+    margin-left: 37%;
+}
