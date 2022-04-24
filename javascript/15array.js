@@ -85,3 +85,86 @@ city.splice(4,2,'Nice')
 (2) ['Pune', 'Amsterdam']
 city
 (6) ['Dubai', 'Mumbai', 'Venice', 'Indore', 'Nice', 'Helsinki']
+
+let city = ['Dubai', 'Mumbai', 'Venice', 'Indore', 'Nice', 'Helsinki']
+
+city.indexOf('Dubai')
+0
+city.indexOf('Nice')
+4
+city.indexOf('Delhi')
+-1
+city.indexOf('Venice')
+2
+city.indexOf('Amsterdam')
+-1
+
+let a = "Hii"
+let b = ["Hi","Hello"]
+
+Array.isArray(a)
+false
+Array.isArray(b)
+true
+
+var a = ['a','b','c',1,2]
+var b = [3,4,'f']
+a+b
+'a,b,c,1,23,4,f'
+a.concat(b)
+['a', 'b', 'c', 1, 2, 3, 4, 'f']
+
+
+let a = "https://github.com/Aakashdeveloper/NodeSample"
+
+a.split('/')
+
+(5) ['https:', '', 'github.com', 'Aakashdeveloper', 'NodeSample']
+let b = a.split('/')
+b
+(5) ['https:', '', 'github.com', 'Aakashdeveloper', 'NodeSample']
+b[b.length-1]
+'NodeSample'
+let a = "https://github.com/Aakashdeveloper/edu_intern_april_22"
+let b = a.split('/')
+
+b[b.length-1]
+'edu_intern_april_22'
+
+
+let a = "I am doing Js"
+
+a.split(' ')
+(4) ['I', 'am', 'doing', 'Js']
+
+
+var a = "Javascript" 
+
+a.split('')
+(10) ['J', 'a', 'v', 'a', 's', 'c', 'r', 'i', 'p', 't']
+var a = ['J', 'a', 'v', 'a', 's', 'c', 'r', 'i', 'p', 't']
+undefined
+a.toString()
+'J,a,v,a,s,c,r,i,p,t'
+a.toString().replace(/,/g,'')
+'Javascript'
+
+
+var myarray = ['Dubai', 'Mumbai',['Red',['Audi','Merc','Bmw'],'Yellow','Green','Blue'], 'London', 'Venice', 'Amsterdam']
+
+var myarray = ['Dubai', 'Mumbai',['Red',['Audi','Merc','Bmw'],'Yellow','Green','Blue'], 'London', 'Venice', 'Amsterdam']
+
+myarray[0]
+'Dubai'
+myarray[2]
+(5) ['Red', Array(3), 'Yellow', 'Green', 'Blue']
+myarray[2][0]
+'Red'
+myarray[2][2]
+'Yellow'
+myarray[2][1]
+(3) ['Audi', 'Merc', 'Bmw']
+myarray[2][1][0]
+'Audi'
+myarray[2][1][1]
+'Merc'
