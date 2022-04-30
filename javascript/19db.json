@@ -1,0 +1,13 @@
+[
+    {
+        "name":"Jab We Met",
+        "rating":4.8,
+        "ind":"Bollywood"
+    },
+    {
+        "name":"Avengers",
+        "rating":4.3,
+        "ind":"Hollywood",
+        "action":"Action"
+    }
+]
