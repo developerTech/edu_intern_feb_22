@@ -12,6 +12,11 @@ if(a%2 == 0){
 }
 Number 10 is even
 
+
+if(a%2 == 0 || a%3 ==0){
+
+}
+
 var a = 11
 if(a%2 == 0){
     console.log(`Number ${a} is even`)

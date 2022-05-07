@@ -64,3 +64,55 @@ let add = (a,b) => { return a+b }
 
 add(2,3)
 5
+
+/////////
+function add(...args){   ////rest
+    let out = 0;
+    for(data of args){
+        //out = out+data
+        out += data
+    }
+    return out
+}
+
+add(1,2,5,7)
+
+///////////////
+
+var input = [1,2,3,5];
+
+function add(a,b,c,d){
+    return a+b+c+d
+}
+
+add(input)
+'1,2,3,5undefinedundefinedundefined'
+add(...input) ///spread
+11
+
+
+if ... is used as function defination it is rest
+if ... is used in calling function it is spread
+
+
+var input = [1,2,3,5];
+function add(...args){   ////rest
+    let out = 0;
+    for(data of args){
+        //out = out+data
+        out += data
+    }
+    return out
+}
+add(...input) //spread
+
+var a  = ['Delhi',"Mumbai","Amsterdam"]
+var b = [1,2,3]
+a+b
+'Delhi,Mumbai,Amsterdam1,2,3'
+
+a.concat(b)
+(6) ['Delhi', 'Mumbai', 'Amsterdam', 1, 2, 3]
+
+var a  = ['Delhi',"Mumbai",...b,"Amsterdam"]
+['Delhi', 'Mumbai', 1, 2, 3, 'Amsterdam']

@@ -43,3 +43,19 @@ const getCity = async() =>{
         document.getElementById('city').appendChild(element)
     })
 }
+
+const getRestaurants = async() => {
+    let stateId = document.getElementById('city').value;
+    let rest = document.getElementById('restaurant');
+    while(rest.length>0){
+        rest.remove(0)
+    }
+    let response = await fetch(`${restUrl}${stateId}`)
+    let data = await response.json()
+    data.map((item) => {
+        let element = document.createElement('option')
+        let text = document.createTextNode(`${item.restaurant_name} | ${item.address}`)
+        element.appendChild(text)
+        rest.appendChild(element)
+    })
+}
