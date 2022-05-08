@@ -21,6 +21,7 @@
 
             function showPosition(data){
                 console.log(data)
+                sessionStorage.setItem('data',data)
                 // x.innerText=`Latitude is ${data.coords.latitude} & Longitude is ${data.coords.longitude}`
                 let latitude = data.coords.latitude;
                 let longitude = data.coords.longitude
