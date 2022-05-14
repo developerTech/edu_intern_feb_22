@@ -6,6 +6,9 @@ https://nodejs.org/en/(install)
 https://www.linkedin.com/ (create account)
 https://stackoverflow.com/ (create account)
 
+(add to chrome)
+https://www.google.com/search?q=json-viewer+chrome&rlz=1C5CHFA_enIN922IN922&oq=&sourceid=chrome&ie=UTF-8
+
 
 ////VsCode extensions///
 Spell Check
@@ -181,3 +184,10 @@ engine V8
 **NodeJs Must be install in system
 > Go inside the folder using cmd/terminal
 > npm i packagename
+
+
+https://github.com/developerTech/edu_intern_feb_22.git
+
+///iffi > immediately invoke-able function
+
+nodemon

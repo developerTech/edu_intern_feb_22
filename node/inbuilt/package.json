@@ -1,0 +1,11 @@
+{
+  "name": "inbuilt",
+  "version": "1.0.0",
+  "description": "this is node inbuilt",
+  "main": "fs.js",
+  "scripts": {
+    "start": "node staticapi.js"
+  },
+  "author": "developer funnel",
+  "license": "ISC"
+}
