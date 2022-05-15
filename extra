@@ -191,3 +191,26 @@ https://github.com/developerTech/edu_intern_feb_22.git
 ///iffi > immediately invoke-able function
 
 nodemon
+
+local dependency
+> install in specific folder
+> used only for same folder
+> local package added in the package.json 
+
+global dependency
+> install in laptop
+> not specific to folder
+> can be used for any application
+> global package does not add in the package.json 
+> require to run the app
+
+#window
+> open cmd as adminstrator
+> npm i -g packagename
+
+ex > > npm i -g nodemon
+
+#mac/linux
+> open cmd as adminstrator
+> sudo npm i -g packagename
+

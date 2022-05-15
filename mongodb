@@ -1,0 +1,46 @@
+///Setup MongoDB
+>>>>>LOCAL<<<<<<<<<
+> https://www.mongodb.com/try/download/community
+    > MongoDb Comunnity Server
+        > Choose OS
+            > Download
+                >Install default setting
+Default PORT > 27017
+
+#window
+> in c drive create one folder 'data'
+> inside data create one folder by name of 'db
+> c:\data\db
+
+>>>>>>Start server<<<<<<<<<<
+> open cmd
+> go inside bin folder  (c:\programmfile\mongodb\server\5.4\bin)
+> mongod
+> do not close this cmd
+
+>>>>>>Start Client<<<<<<<<<<
+> open cmd
+> go inside bin folder  (c:\programmfile\mongodb\server\5.4\bin)
+> mongo
+
+#mac/linux
+> open terminal
+> mkdir data/db
+
+>>>>>>Start server<<<<<<<<<<
+> open terminal
+> mongod --dbpath data/db
+> do not close this cmd
+
+>>>>>>Start Client<<<<<<<<<<
+> open terminal
+> mongo
+
+
+>>>>>>Compass (ui for db)
+https://www.mongodb.com/try/download/compass
+
+
+>>>>>Live<<<<<<<<< (mongodb atlas)
+Sign up
+>https://www.mongodb.com/cloud/atlas/register2?utm_content=rlsapostreg&utm_source=google&utm_campaign=gs_apac_rlsamulti_search_brand_dsa_atlas_desktop_rlsa_postreg&utm_term=&utm_medium=cpc_paid_search&utm_ad=&utm_ad_campaign_id=14412646494&adgroup=131761134692&gclid=Cj0KCQjwyYKUBhDJARIsAMj9lkFehy4NvBCeV5A-Yi1_MDepIEc_gLd2tnrVoMoLiE9ZR_DtqrSQohoaApX_EALw_wcB
