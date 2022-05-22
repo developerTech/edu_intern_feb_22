@@ -8,45 +8,47 @@ let MongoClient = mongo.MongoClient;
 let mongoUrl = process.env.MonogUrl;
 let db;
 
+let authKey = "Basic11a02918ead40aeee034e16b071a9a0d"
+
+function auth(key){
+  if(authKey === key){
+    return true
+  }else{
+    return false
+  }
+}
 
 app.get('/',(req,res) => {
     res.send('Express Server default')
 })
 
-app.get('/items/:collections',(req,res) => {
-  db.collection(req.params.collections).find().toArray((err,result) => {
-    if(err) throw err;
-    res.send(result)
-  })
-})
-
 app.get('/location',(req,res) => {
-    db.collection('location').find().toArray((err,result) => {
-      if(err) throw err;
-      res.send(result)
-    })
+    //let key = req.query.key;
+    let key = req.header('x-basic-auth')
+    if(authKey === key){
+      db.collection('location').find().toArray((err,result) => {
+        if(err) throw err;
+        res.send(result)
+      })
+    }else{
+      res.send('Unauthorized Calling')
+    }
 })
 
 app.get('/mealType',(req,res) => {
+  if(auth(req.header('x-basic-auth'))){
     db.collection('mealType').find().toArray((err,result) => {
       if(err) throw err;
       res.send(result)
     })
+  }else{
+    res.send('Unauthorized Calling')
+  }
+  
 })
 
 app.get('/restaurants',(req,res) => {
-  let stateId = Number(req.query.stateId)
-  let mealId = Number(req.query.mealId)
-  let query = {}
-  if(stateId && mealId){
-    query = {state_id:stateId,'mealTypes.mealtype_id':mealId}
-  }
-  else if(stateId){
-    query = {state_id:stateId}
-  }else if(mealId){
-    query = {'mealTypes.mealtype_id':mealId}
-  }
-  db.collection('restaurants').find(query).toArray((err,result) => {
+  db.collection('restaurants').find().toArray((err,result) => {
     if(err) throw err;
     res.send(result)
   })

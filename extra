@@ -214,3 +214,17 @@ ex > > npm i -g nodemon
 > open cmd as adminstrator
 > sudo npm i -g packagename
 
+
+C > Create   > POST
+R > Read     > GET
+U > Update   > Put/Patch
+D > Delete   > Delete
+
+params
+> what pass after / in url
+> We need to define params
+> params are complusory if defined
+
+queryParams
+> what pass after ? in url
+> No need to define queryParams

@@ -44,3 +44,75 @@ https://www.mongodb.com/try/download/compass
 >>>>>Live<<<<<<<<< (mongodb atlas)
 Sign up
 >https://www.mongodb.com/cloud/atlas/register2?utm_content=rlsapostreg&utm_source=google&utm_campaign=gs_apac_rlsamulti_search_brand_dsa_atlas_desktop_rlsa_postreg&utm_term=&utm_medium=cpc_paid_search&utm_ad=&utm_ad_campaign_id=14412646494&adgroup=131761134692&gclid=Cj0KCQjwyYKUBhDJARIsAMj9lkFehy4NvBCeV5A-Yi1_MDepIEc_gLd2tnrVoMoLiE9ZR_DtqrSQohoaApX_EALw_wcB
+
+RollNo | Hindi | English
+  1    |   80  |  
+  2    |       |  70
+  3    |   86  |  
+
+[
+    {
+        rollNo:1,
+        Hindi:80
+    },
+    {
+        rollNo:2,
+        English:70
+    },
+    {
+        rollNo:3,
+        Hindi:86
+    }
+]
+
+
+SQL       NoSQL(MongoDb)
+Database  Database
+Table     Collections
+Row       Document
+Select    Find 
+Insert    Insert 
+Update    Update
+Delete    Remove
+
+//////////////
+>>To See all database<<<<<
+show dbs
+
+>>Go inside db
+use dbname
+
+>>To see the collection
+show collections
+
+>> to find the data
+db.collectionname.find()
+db.menu.find().pretty()
+
+>> to create new database
+use databasename
+
+>>to insert document
+db.user.insert({name:'Nikita'})
+db.user.insert({name:'Joel'})
+db.user.insert({_id:1,name:'Amit'})
+db.user.insert({_id:2,name:'Saloni'})
+db.user.insert({_id:3,name:'Bhumika',city:'Paris'})
+
+_id > each value with have some unique identifier
+(primary key, no duplicate value)
+
+default value is objectid
+12Bytes
+5bytes > Random Number
+3bytes > Series
+4bytes > timestamp 
+
+network access IP > 0.0.0.0/0        
+database access > Add Database User > (add username & password) > Atlas Admin > Add User
+                                      (test & test123)
+
+
+////find with conditions
+> db.restaurants.find({state_id:2,location_id:5})
+> db.restaurants.find({"mealTypes.mealtype_id":1})
