@@ -6,6 +6,7 @@ let port = process.env.PORT || 9870;
 let mongo = require('mongodb');
 let MongoClient = mongo.MongoClient;
 let mongoUrl = process.env.MonogUrl;
+//let mongoUrl = process.env.MonogLIveUrl;
 let db;
 
 
@@ -51,6 +52,84 @@ app.get('/restaurants',(req,res) => {
     res.send(result)
   })
 })
+
+app.get(`/filter/:mealId`,(req,res) => {
+  let sort = {cost:1}
+  let mealId = Number(req.params.mealId)
+  let cuisineId = Number(req.query.cuisineId)
+  let lcost = Number(req.query.lcost)
+  let hcost = Number(req.query.hcost)
+  let query = {}
+  if(req.query.sort){
+    sort={cost:req.query.sort}
+  }
+
+  if(lcost && hcost && cuisineId){
+    query={
+      "mealTypes.mealtype_id":mealId,
+      $and:[{cost:{$gt:lcost,$lt:hcost}}],
+      "cuisines.cuisine_id":cuisineId
+    }
+  }
+  else if(lcost && hcost){
+    query={
+      "mealTypes.mealtype_id":mealId,
+      $and:[{cost:{$gt:lcost,$lt:hcost}}]
+    }
+  }
+  else if(cuisineId){
+    query={
+      "mealTypes.mealtype_id":mealId,
+      "cuisines.cuisine_id":cuisineId
+    }
+  }else{
+    query={
+      "mealTypes.mealtype_id":mealId
+    }
+  }
+  db.collection('restaurants').find(query).sort(sort).toArray((err,result) => {
+    if(err) throw err;
+    res.send(result)
+  })
+})
+
+// app.get('/details/:id',(req,res) => {
+//   let id = mongo.ObjectId(req.params.id)
+//   db.collection('restaurants').find({_id:id}).toArray((err,result) => {
+//     if(err) throw err;
+//     res.send(result)
+//   })
+// })
+
+app.get('/details/:id',(req,res) => {
+  let id = Number(req.params.id)
+  db.collection('restaurants').find({restaurant_id:id}).toArray((err,result) => {
+    if(err) throw err;
+    res.send(result)
+  })
+})
+
+app.get('/menu/:id',(req,res) => {
+  let id = Number(req.params.id)
+  db.collection('menu').find({restaurant_id:id}).toArray((err,result) => {
+    if(err) throw err;
+    res.send(result)
+  })
+})
+
+app.get('/orders',(req,res) => {
+  let email = req.query.email;
+  let query = {}
+  if(email){
+    //query = {email:email}
+    query = {email}
+  }
+  db.collection('orders').find(query).toArray((err,result) => {
+    if(err) throw err;
+    res.send(result)
+  })
+})
+
 
 
 //Connection with db

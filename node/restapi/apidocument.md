@@ -13,17 +13,17 @@
 >>(Get) http://localhost:9100/restaurants?mealId=5
 > http://localhost:9100/restaurants?mealId=5&stateId=2
 > Filter on basis of cuisine
->>(Get)
+>>(Get) http://localhost:9100/filter/1?cuisineId=2
 > Filter on basis of cost
->>(>(Get)
+>>(>(Get) http://localhost:9100/filter/1?lcost=700&hcost=1200
 > Sort on basis of cost
->>(Get)
+>>(Get) http://localhost:9100/filter/1?lcost=500&hcost=1200&sort=-1
 
 //Page3
 > Details of the restaurant
->>(Get)
+>>(Get) http://localhost:9100/details/5
 > Menu of the restaurant
->>(Get)
+>>(Get) http://localhost:9100/menu/7
 
 //page4
 > Menu details (selected item)
@@ -33,9 +33,9 @@
 
 //page5
 > List of order placed 
->>(Get)
+>>(Get) http://localhost:9100/orders
 > List of order placed of particular user
->>(Get)
+>>(Get) http://localhost:9100/orders?email=amit@gmail.com
 > Update order status
 >>(Put)
 
