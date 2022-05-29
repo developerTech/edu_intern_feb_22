@@ -27,9 +27,20 @@
 
 //page4
 > Menu details (selected item)
->>(Post)
+>>(Post) localhost:9100/menuItem
+[1,4,6]
 > Place order
->>(Post)
+>>(Post) localhost:9100/placeOrder
+(
+    {
+        "name":"Nikita",
+        "email":"nikita@gmail.com",
+        "address":"Hom 39",
+        "phone":934645457,
+        "cost":845,
+        "menuItem":[10,13,17]
+    }
+)
 
 //page5
 > List of order placed 
@@ -37,9 +48,17 @@
 > List of order placed of particular user
 >>(Get) http://localhost:9100/orders?email=amit@gmail.com
 > Update order status
->>(Put)
+>>(Put) http://localhost:9100/updateOrder/2
+(
+    {
+        "status":"TAX_FAIL",
+        "bank_name":"AXIS",
+        "date":"29/05/2023"
+    }   
+)
+
 
 
 ////////////////////////////////
 > Delete orders
->>(Delete)
+>>(Delete) localhost:9100/deleteOrder/628c485d93399d546c136d84

@@ -228,3 +228,10 @@ params
 queryParams
 > what pass after ? in url
 > No need to define queryParams
+
+
+
+/////Deployment
+> www.heroku.com
+
+npm i bcryptjs body-parser cors express jsonwebtoken mongoose
