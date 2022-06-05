@@ -255,3 +255,6 @@ npm i bcryptjs body-parser cors express jsonwebtoken mongoose
 (Header) => {'x-access-token':'token value from login'}
 
 https://docs.github.com/en/developers/apps/building-oauth-apps/authorizing-oauth-apps
+
+
+https://dashboard.paytm.com/next/apikeys
