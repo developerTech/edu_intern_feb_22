@@ -258,3 +258,24 @@ https://docs.github.com/en/developers/apps/building-oauth-apps/authorizing-oauth
 
 
 https://dashboard.paytm.com/next/apikeys
+
+/////Step to Generate React APP///////
+> Go inside the folder using cmd
+> npx create-react-app appname
+
+////To Run
+> Go inside folder
+> npm start
+
+///////////
+# Class
+> Logical Component
+> help to call api, write logic as well as display Contnent
+> Can maintain State
+# Function
+> Dumb Components
+> Display Content
+> Cannot Maintain State
+
+
+> HooksComponent
