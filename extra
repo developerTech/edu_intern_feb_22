@@ -279,3 +279,23 @@ https://dashboard.paytm.com/next/apikeys
 
 
 > HooksComponent
+
+///////
+State
+> act like a local variable
+> every component can have its own state
+> state is mutable (we can update the value)
+> Scope of the state will be in same component
+Props
+> to pass the data from child to parent or vice versa
+> props are immutable
+
+
+parent > child (props)
+child > parent (props with function)
+
+function add(a.b){
+    return a+b
+}
+
+add(1,2)
