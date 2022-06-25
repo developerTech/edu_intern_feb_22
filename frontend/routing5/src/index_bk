@@ -1,0 +1,30 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import {BrowserRouter,Route, Link} from 'react-router-dom';
+import Header from './component/header';
+import Footer from './component/footer';
+import Home from './component/Home';
+import Post from './component/Post';
+import Profile from './component/Profile';
+
+const App = () => {
+    return(
+        <BrowserRouter>
+            <Header/>
+                <Link to="/">Home</Link>
+                <Link to="/post">Post</Link>
+                <Link to="/profile">Profile</Link>
+                <div className="container">
+                    <Route exact path="/" component={Home}/>
+                    <Route path="/post" component={Post}/>
+                    <Route path="/profile" component={Profile}/>
+                </div>
+            <Footer/>
+        </BrowserRouter>
+    )
+}
+
+
+const container = document.getElementById('root');
+const root = ReactDOM.createRoot(container)
+root.render(<App/>)

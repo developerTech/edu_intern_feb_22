@@ -299,3 +299,10 @@ function add(a.b){
 }
 
 add(1,2)
+
+///routing5
+npm i react-router-dom@5.3.0
+
+history > for redirection
+location > for queryparam
+match > for params
