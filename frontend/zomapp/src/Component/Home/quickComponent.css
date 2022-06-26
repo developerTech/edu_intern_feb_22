@@ -1,0 +1,80 @@
+#quickSearch{
+    width:80%;
+    margin-left:10%;
+    margin-top: 2%;
+}
+
+#quickHeading{
+     font-size:30px;
+     color:#e28b62;
+     display:block;
+     font-weight:bold;
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     margin-left: 2%;
+}
+#quickHeading:hover{
+    font-size:40px;
+    color:#8462e2;
+}
+
+#quickSubHeading{
+    font-size:20px;
+    color:gray;
+    display:block;
+    line-height: 3;
+    margin-left: 2%;
+}
+
+.tileContainer{
+    width:30%;
+    box-shadow: 10px 20px 40px gray;
+    display: inline-block;
+    margin-left: 2%;
+    margin-top: 2%;
+    animation: dance 10s infinite; 
+}
+
+@keyframes dance{
+    0% {transform: rotate(-5deg)}
+    25% {transform: rotate(0deg)}
+    60% {transform: scale(1.1)}
+    50% {transform: rotate(5deg)}
+    75% {transform: rotate(0deg)}
+    100% {transform: rotate(-5deg)}
+}
+
+.tileContainer:hover{
+    /* 
+    transform:scale(1.1)
+    transform:skewX(-20deg)
+    transform:rotate(0deg)
+     transform:translate(100px,100px)*/
+    transform:scale(1.1)
+}
+
+.tileComponent1{
+  width:50%;
+  height:180px;
+  float: left;
+}
+
+.tileComponent1 > img{
+    width:100%;
+    height:180px;
+}
+.tileComponent2{
+    width:45%;
+    margin-left: 5%;
+    margin-top: 14%;
+    float: left;
+}
+
+.componentHeading > a{
+    color:#e28b62;
+    font-size: 25px;
+}
+
+.componentSubHeading{
+    color:gray;
+    font-size: 15px;
+}

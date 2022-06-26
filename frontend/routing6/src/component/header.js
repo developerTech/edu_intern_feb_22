@@ -11,13 +11,13 @@ const Header = () => {
                     <span className="icon-bar"></span>
                     <span className="icon-bar"></span>
                 </button>
-                <Link className="navbar-brand" href="#">WebSiteName</Link>
+                <Link className="navbar-brand" to="home">Developer Funnel</Link>
                 </div>
                 <div className="collapse navbar-collapse" id="myNavbar">
                     <ul className="nav navbar-nav">
-                        <li><Link to="/">Home</Link></li>
-                        <li><Link to="/post">Post</Link></li>
-                        <li><Link to="/profile">Profile</Link></li>
+                        <li><Link to="home">Home</Link></li>
+                        <li><Link to="post">Post</Link></li>
+                        <li><Link to="profile">Profile</Link></li>
                     </ul>
                 </div>
             </div>

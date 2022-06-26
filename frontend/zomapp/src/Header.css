@@ -1,0 +1,23 @@
+a{
+    text-decoration:none
+}
+/*footer CSS*/
+#header{
+    height:60px;
+    background-color:#e28b62
+}
+
+#icon{
+    float: left;
+    margin-left:1%;
+    margin-top:-1%
+}
+
+#social{
+    float: right; 
+}
+
+.slogo{
+    height:50px;
+    width:50px;
+}
