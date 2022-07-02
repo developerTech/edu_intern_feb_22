@@ -69,7 +69,7 @@
     float: left;
 }
 
-.componentHeading > a{
+.componentHeading{
     color:#e28b62;
     font-size: 25px;
 }
