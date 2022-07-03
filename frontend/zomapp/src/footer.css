@@ -2,7 +2,8 @@
     height:120px;
     width:100%;
     margin-top: 5%;
-    background-color:#e28b62
+    background-color:#e28b62;
+    display:inline-block;
 }
 
 #footText{
