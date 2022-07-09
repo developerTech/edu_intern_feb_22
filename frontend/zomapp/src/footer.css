@@ -21,3 +21,11 @@
 .noBorder{
     border:none 
 }
+#social{
+    float: right; 
+}
+
+.slogo{
+    height:50px;
+    width:50px;
+}

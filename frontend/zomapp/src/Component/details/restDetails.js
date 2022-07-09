@@ -3,6 +3,7 @@ import axios from 'axios';
 import './details.css';
 import {Link} from 'react-router-dom';
 import MenuDisplay from './menuDisplay';
+import Header from '../../header';
 
 const url = "http://zomatoajulypi.herokuapp.com";
 
@@ -32,6 +33,7 @@ class RestDetails extends Component {
         let {details} = this.state
         return(
             <>
+                <Header/>
                 <div id="mainContent">
                     <div className="imgDiv">
                         <img src={this.state.details.restaurant_thumb} alt="snacks"/>
@@ -44,15 +46,15 @@ class RestDetails extends Component {
                         <h3>Test Food with Refreshing Taste</h3>
                         <div className="feature_container">
                             <div className="feature">
-                                <img src="https://i.ibb.co/wJvrhYg/veg.png" alt="veg" class="imgIcon"/>
+                                <img src="https://i.ibb.co/wJvrhYg/veg.png" alt="veg" className="imgIcon"/>
                                 <p>Pure Veg</p>
                             </div>
                             <div className="feature">
-                                <img src="https://i.ibb.co/mD3jpgc/sentizied.png" alt="veg" class="imgIcon"/>
+                                <img src="https://i.ibb.co/mD3jpgc/sentizied.png" alt="veg" className="imgIcon"/>
                                 <p>Fully Senatized</p>
                             </div>
                             <div className="feature">
-                                <img src="https://i.ibb.co/kHrm3Mh/delivery.png" alt="veg" class="imgIcon"/>
+                                <img src="https://i.ibb.co/kHrm3Mh/delivery.png" alt="veg" className="imgIcon"/>
                                 <p>Free Delivery</p>
                             </div>
                         </div>
