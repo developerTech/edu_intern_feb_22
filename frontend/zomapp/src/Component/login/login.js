@@ -8,8 +8,9 @@ class Login extends Component {
         super(props)
 
         this.state={
-            email:'',
-            password:''
+            email:'nidhi@gmail.com',
+            password:'12345678',
+            message:''
         }
     }
 
@@ -26,7 +27,15 @@ class Login extends Component {
             },
             body:JSON.stringify(this.state)
         })
-        .then(this.props.history.push('/login'))
+        .then((res) => res.json())
+        .then((data) => {
+            if(data.auth === false){
+                this.setState({message:data.token})
+            }else{
+                sessionStorage.setItem('ltk',data.token)
+                this.props.history.push('/')
+            }
+        })
     }
 
     render(){
@@ -40,6 +49,7 @@ class Login extends Component {
                             <h3>Login</h3>
                         </div>
                         <div className="panel-body">
+                            <h3 style={{color:'red'}}>{this.state.message}</h3>
                             <div className="form-group col-md-6">
                                 <label htmlFor="email">Email</label>
                                 <input id="email" name="email" className="form-control"
@@ -50,7 +60,7 @@ class Login extends Component {
                                 <input id="password" name="password" className="form-control"
                                 value={this.state.password} onChange={this.handleChange}/>
                             </div>
-                            <buttin className="btn btn-info" onClick={this.handleSubmit}>Login</buttin>
+                            <button className="btn btn-info" onClick={this.handleSubmit}>Login</button>
                         </div>
                     </div>
                 </div>

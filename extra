@@ -347,3 +347,17 @@ match > for params
 (Header) => {'x-access-token':'token value from login'}
 
 https://developerpayment.herokuapp.com/paynow
+
+
+/////////////
+npm run build
+
+https://www.netlify.com/
+
+DataBAse > Atlas
+Herkou
+ > Backend api
+ > Login Api
+ > Payment Gateway
+Netlify
+ > React App

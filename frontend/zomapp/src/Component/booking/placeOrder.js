@@ -12,10 +12,10 @@ class PlaceOrder extends Component {
         this.state={
             id:Math.floor(Math.random()*100000),
             hotel_name:this.props.match.params.restName,
-            name:'Nikita',
-            email:'nikita@gmail.com',
+            name:sessionStorage.getItem('userinfo')?sessionStorage.getItem('userinfo').split(',')[0]:'',
+            email:sessionStorage.getItem('userinfo')?sessionStorage.getItem('userinfo').split(',')[1]:'',
             cost:0,
-            phone:'435346544',
+            phone:sessionStorage.getItem('userinfo')?sessionStorage.getItem('userinfo').split(',')[2]:'',
             address:'Hno 28',
             menuItem:''
         }
@@ -32,7 +32,7 @@ class PlaceOrder extends Component {
             },
             body:JSON.stringify(obj)
         })
-        .then(this.props.history.push('/viewBooking'))
+        //.then(this.props.history.push('/viewBooking'))
     }
     renderItem = (data) => {
         if(data){
@@ -53,43 +53,62 @@ class PlaceOrder extends Component {
     }
 
     render(){
+        if(sessionStorage.getItem('loginStatus') === 'false'){
+            return(
+                <div>
+                    <Header/>
+                    <center>
+                        <h2>Login First To Place Order</h2>
+                    </center>
+                </div>
+            )
+
+        }
         return(
             <>
                 <Header/>
                 <div className="container">
                     <div className="panel panel-primary">
+                       
                         <div className="panel-heading">
                             <h3>Your Order For {this.state.hotel_name}</h3>
                         </div>
                         <div className="panel-body">
-                            <div className="form-group col-md-6">
-                                <label htmlFor="fname">Name</label>
-                                <input id="fname" name="name" className="form-control"
-                                value={this.state.name} onChange={this.handleChange}/>
-                            </div>
-                            <div className="form-group col-md-6">
-                                <label htmlFor="email">Email</label>
-                                <input id="email" name="email" className="form-control"
-                                value={this.state.email} onChange={this.handleChange}/>
-                            </div>
-                            <div className="form-group col-md-6">
-                                <label htmlFor="phone">Phone</label>
-                                <input id="phone" name="phone" className="form-control"
-                                value={this.state.phone} onChange={this.handleChange}/>
-                            </div>
-                            <div className="form-group col-md-6">
-                                <label htmlFor="address">Address</label>
-                                <input id="address" name="address" className="form-control"
-                                value={this.state.address} onChange={this.handleChange}/>
-                            </div>
+                            <form action="https://developerpayment.herokuapp.com/paynow" method="POST">
+                                <input type="hidden" name="cost" value={this.state.cost}/>
+                                <input type="hidden" name="id" value={this.state.id}/>
+                                <input type="hidden" name="hotel_name" value={this.state.hotel_name}/>
+                                <div className="form-group col-md-6">
+                                    <label htmlFor="fname">Name</label>
+                                    <input id="fname" name="name" className="form-control"
+                                    value={this.state.name} onChange={this.handleChange}/>
+                                </div>
+                                <div className="form-group col-md-6">
+                                    <label htmlFor="email">Email</label>
+                                    <input id="email" name="email" className="form-control"
+                                    value={this.state.email} onChange={this.handleChange}/>
+                                </div>
+                                <div className="form-group col-md-6">
+                                    <label htmlFor="phone">Phone</label>
+                                    <input id="phone" name="phone" className="form-control"
+                                    value={this.state.phone} onChange={this.handleChange}/>
+                                </div>
+                                <div className="form-group col-md-6">
+                                    <label htmlFor="address">Address</label>
+                                    <input id="address" name="address" className="form-control"
+                                    value={this.state.address} onChange={this.handleChange}/>
+                                </div>
+                                {this.renderItem(this.state.menuItem)}
+                                <div className="row">
+                                    <div className="col-md-12">
+                                        <h2>Total Price is Rs.{this.state.cost}</h2>
+                                    </div>
+                                </div>
+                                <button className="btn btn-success" onClick={this.checkout} type="submit">PlaceOrder</button>
+                            </form>
                         </div>
-                        {this.renderItem(this.state.menuItem)}
-                        <div className="row">
-                            <div className="col-md-12">
-                                <h2>Total Price is Rs.{this.state.cost}</h2>
-                            </div>
-                        </div>
-                        <button className="btn btn-success" onClick={this.checkout}>PlaceOrder</button>
+                        
+                        
                     </div>
                 </div>
             </>

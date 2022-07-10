@@ -8,7 +8,7 @@ let port = process.env.PORT || 9870;
 let mongo = require('mongodb');
 let MongoClient = mongo.MongoClient;
 //let mongoUrl = process.env.MonogUrl;
-let mongoUrl = process.env.MonogLIveUrl;
+let mongoUrl = process.env.MonogUrl;
 let db;
 
 //middleware (supporting lib)
@@ -159,7 +159,7 @@ app.post('/placeOrder',(req,res) => {
 app.put('/updateOrder/:id',(req,res) => {
     let oid = Number(req.params.id);
     db.collection('orders').updateOne(
-      {orderId:oid},
+      {id:oid},
       {
         $set:{
           "status":req.body.status,
